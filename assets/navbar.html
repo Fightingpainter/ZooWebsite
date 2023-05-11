@@ -1,0 +1,129 @@
+<style>
+    .navbar {
+        background: linear-gradient(to right, #0075f2, #218cff);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .navbar-brand {
+        color: #FFFFFF;
+        transition: all 0.3s ease;
+        font-size: 1.5em;
+        z-index: 3;
+    }
+    .navbar-brand:hover {
+        transform: rotate(5deg);
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #FFFFFF;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 3;
+    }
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: #000000;
+        transform: scale(1.1);
+    }
+    .navbar-toggler {
+        border-color: #FFFFFF;
+        z-index: 3;
+    }
+    .fish, .bubble {
+        position: absolute;
+        z-index: 2;
+    }
+</style>
+<script>
+    const navbar = document.querySelector('.navbar');
+    let fishInterval;
+    let bubbleInterval;
+    let fishCount = 0;
+    let bubbleCount = 0;
+    const maxFish = 10;
+    const maxBubbles = 20;
+
+    function createFish() {
+        if (fishCount >= maxFish) return;
+        fishCount++;
+        const fish = document.createElement('img');
+        fish.src = 'assets/img/fish.png';
+        fish.classList.add('fish');
+        fish.style.width = '60px'; // size (2:1 ratio)
+        fish.style.height = '30px'; // size (2:1 ratio)
+        fish.style.bottom = Math.random() * navbar.offsetHeight + 'px';
+        fish.style.right = '0px';
+        navbar.appendChild(fish);
+        let position = window.innerWidth;
+        const moveFish = () => {
+            if (position < -100) {
+                navbar.removeChild(fish);
+                fishCount--;
+            } else {
+                fish.style.right = position + 'px';
+                position -= 1; //speed
+                requestAnimationFrame(moveFish);
+            }
+        }
+        requestAnimationFrame(moveFish);
+    }
+
+    function createBubble() {
+        if (bubbleCount >= maxBubbles) return;
+        bubbleCount++;
+        const bubble = document.createElement('img');
+        bubble.src = 'assets/img/bubble.png';
+        bubble.classList.add('bubble');
+        bubble.style.bottom = '-100px';  // size (1:1 ratio)
+        bubble.style.left = Math.random() * navbar.offsetWidth + 'px';
+        const size = Math.random() * 30 + 10;
+        bubble.style.width = size + 'px';
+        bubble.style.height = size + 'px';
+        navbar.appendChild(bubble);
+        let position = -100;  // offset
+        const moveBubble = () => {
+            if (position > navbar.offsetHeight) {
+                navbar.removeChild(bubble);
+                bubbleCount--;
+            } else {
+                bubble.style.bottom = position + 'px';
+                position += 1; //speed
+                requestAnimationFrame(moveBubble);
+            }
+        }
+        requestAnimationFrame(moveBubble);
+    }
+
+    setInterval(createFish, 3000);
+    setInterval(createBubble, 2000);
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Aquarium</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Animals</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Fish</a></li>
+                        <li><a class="dropdown-item" href="#">Turtles</a></li>
+                        <li><a class="dropdown-item" href="#">Seals</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tickets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
