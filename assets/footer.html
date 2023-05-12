@@ -1,0 +1,21 @@
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto; /* This will make the main content expand to take up all available space, pushing the footer down */
+}
+
+footer {
+    flex-shrink: 0; /* This will prevent the footer from shrinking if there's not enough content */
+}
+</style>
+
+<footer class="footer bg-dark text-white text-center py-3">
+    <div class="container" >
+        <a href="./privacy.html">&copy; 2023 Your Aquarium Name. All Rights Reserved.</a>
+    </div>
+</footer>
