@@ -102,7 +102,7 @@
         if (fishCount >= maxFish) return;
         fishCount++;
         const fish = document.createElement('img');
-        fish.src = 'assets/img/fish.png';
+        fish.src = './assets/img/fish.png';
         fish.classList.add('fish');
 
         var min = 15;
@@ -132,7 +132,7 @@
         if (bubbleCount >= maxBubbles) return;
         bubbleCount++;
         const bubble = document.createElement('img');
-        bubble.src = 'assets/img/bubble.png';
+        bubble.src = './assets/img/bubble.png';
         bubble.classList.add('bubble');
         bubble.style.bottom = '-100px';
         bubble.style.left = Math.random() * navbar.offsetWidth + 'px';
