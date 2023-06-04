@@ -51,6 +51,7 @@
         transition: all 0.3s ease;
         transform-origin: center;
         font-size: 20px;
+        width: auto;
     }
     .my-dropdown-item:hover {
         color: #ffffff;
@@ -73,7 +74,7 @@
     }
 
     .dropdown-menu {
-        width: 100%;
+        width: auto!important;
     }
     @media (max-width: 385px) {
         .my-navbar-item {
@@ -106,7 +107,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle my-navbar-item" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Animals</a>
-                    <ul class="dropdown-menu justify-content-center my-dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu justify-content-center my-dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item my-dropdown-item habitat" href="/pages/animals/reef.html">Reef</a></li>
                         <li><a class="dropdown-item my-dropdown-item habitat" href="/pages/animals/depths.html">Depths</a></li>
                         <li><hr></li>
