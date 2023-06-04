@@ -54,21 +54,27 @@ a.btn:hover {
 }
 
 main {
-    margin: 5vh 5vw;
-    padding: 5vh 5vw;
+    justify-content: center;
+    padding: 5rem 5rem 5rem 5rem;
 }
 
 section{
     background-color: #ffffffaa;
     backdrop-filter: blur(10px);
-    margin-top: 50px;
-    margin-bottom: 50px;
     padding: 30px;
     box-shadow: 0 10px 10px rgba(0,0,0,0.1); /* Softened shadow */
     border-radius: 15px; /* Rounded corners */
     transition: box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 section:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+
+@media screen(max-width: 768px) {
+    main {
+        padding: 2rem 1rem;
+    }
 }
