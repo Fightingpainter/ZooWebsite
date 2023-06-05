@@ -49,13 +49,3 @@ main{
 .my-image:hover{
     transform: scale(1.05);    
 }
-
-.my-link{
-    text-decoration: none;
-    color: black;
-    transition: transform .2s;
-}
-
-.my-link:hover{
-    transform: scale(1.005);
-}
