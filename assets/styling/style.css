@@ -22,6 +22,7 @@ body::before {
     backdrop-filter: blur(5px);
     z-index: -1;
 }
+
 main{
     margin-top: 15%;
     margin-bottom: 20%;
@@ -35,9 +36,26 @@ main{
     overflow: hidden;
     width: 80%;
     margin: 10px auto;
-
 }
 
 .my-card:hover {
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.my-image{
+    transition: transform .2s;
+}
+
+.my-image:hover{
+    transform: scale(1.05);    
+}
+
+.my-link{
+    text-decoration: none;
+    color: black;
+    transition: transform .2s;
+}
+
+.my-link:hover{
+    transform: scale(1.005);
 }
