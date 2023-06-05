@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create array of ad data
     var ads = [
         {
-            link: "https://fightingpainter.github.io/ZooWebsite/index.html",
+            link: "https://fightingpainter.github.io/ZooWebsite",
             title: "Evade's Enchanted Aquarium",
             text: "Dive into the Wonder of Evade's Enchanted Aquarium: Experience Aquatic Beauty Online!",
             imgPath: "https://fightingpainter.github.io/ZooWebsite/favicon.png",
