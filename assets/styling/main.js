@@ -61,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create array of ad data
     var ads = [
-        {
+        /* {
             link: "https://fightingpainter.github.io/ZooWebsite",
             title: "Evade's Enchanted Aquarium",
             text: "Dive into the Wonder of Evade's Enchanted Aquarium: Experience Aquatic Beauty Online!",
             imgPath: "https://fightingpainter.github.io/ZooWebsite/favicon.png",
             imgAlt: "Evade's Enchanted Aquarium's icon"
-        },
+        }, */
         {
             link: "https://standbee.github.io/peculiar-zoo",
             title: "Zoo of Peculiarity",
